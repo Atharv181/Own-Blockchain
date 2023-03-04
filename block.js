@@ -12,6 +12,16 @@ class Block {
   static genesis(){
     return new this(GENESIS_DATA);
   }
+  static mineBlock(prevBlock, data){
+    const timestamp = Date.now();
+    const prevHash = prevBlock.hash;
+    return new Block({
+        timestamp,
+        prevHash,
+        data,
+        hash:cryptoHash(timestamp,prevHash,data)
+    })
+  }
 }
 
 const block1 = new Block({
@@ -24,5 +34,7 @@ const block1 = new Block({
 const genesisBlock = Block.genesis();
 //console.log(genesisBlock)
 
+const result = Block.mineBlock(genesisBlock,"Bobade");
+console.log(result)
 //console.log(block1);
 
