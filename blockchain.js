@@ -10,8 +10,7 @@ class Blockchain{
             prevBlock: this.chain[this.chain.length-1],     
             data:data
         });
-        console.log(this.chain.length-1);
-        // console.log(this.chain[this.chain.length-1]);
+
         this.chain.push(newBlock);
     }
 }

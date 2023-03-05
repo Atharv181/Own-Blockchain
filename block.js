@@ -35,7 +35,7 @@ const block1 = new Block({
 const genesisBlock = Block.genesis();
 //console.log(genesisBlock)
 
-const result = Block.mineBlock(genesisBlock,"Bobade");
+// const result = Block.mineBlock({prevBlock:genesisBlock,data:"Bobade"});
 // console.log(result)
 //console.log(block1);
 
