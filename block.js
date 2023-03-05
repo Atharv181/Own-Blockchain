@@ -12,7 +12,7 @@ class Block {
   static genesis(){
     return new this(GENESIS_DATA);
   }
-  static mineBlock(prevBlock, data){
+  static mineBlock({prevBlock, data}){
     const timestamp = Date.now();
     const prevHash = prevBlock.hash;
     return new Block({
@@ -31,10 +31,13 @@ const block1 = new Block({
   data: "Hello World",
 });
 
+
 const genesisBlock = Block.genesis();
 //console.log(genesisBlock)
 
 const result = Block.mineBlock(genesisBlock,"Bobade");
-console.log(result)
+// console.log(result)
 //console.log(block1);
+
+module.exports = Block;
 
