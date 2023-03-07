@@ -32,9 +32,9 @@ class Blockchain{
             return false;
         }
         for(let i=1;i<chain.length;i++){
-            const {timestamp,prevHash,hash,data} = chain[i];
+            const {timestamp,prevHash,hash,data,nonce, difficulty} = chain[i];
             const realLastHash = chain[i-1].hash;
-            const validatedHash = cryptoHash(timestamp,data,prevHash);
+            const validatedHash = cryptoHash(timestamp,data,prevHash,nonce,difficulty);
 
             if(prevHash !== realLastHash){
                 return false;
@@ -50,9 +50,10 @@ class Blockchain{
 
 const blockchain = new Blockchain();
 blockchain.addBlock({data:"King"});
-// console.log(blockchain);
+blockchain.addBlock({data:"Kohli"});
+console.log(blockchain);
 
-const result = Blockchain.isValidChain(blockchain.chain);
-console.log(result)
+// const result = Blockchain.isValidChain(blockchain.chain);
+// console.log(result)
 
 module.exports = Blockchain;
