@@ -1,4 +1,5 @@
 const INITIAL_DIFFICULTY = 4;
+const MINE_RATE = 10000; //10 sec
 
 const GENESIS_DATA ={
     timestamp : 181,
@@ -9,4 +10,4 @@ const GENESIS_DATA ={
     nonce: 0,
 };
 
-module.exports = { GENESIS_DATA };
+module.exports = { GENESIS_DATA , MINE_RATE };
