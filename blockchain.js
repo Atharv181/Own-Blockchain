@@ -53,8 +53,8 @@ class Blockchain{
 }
 
 const blockchain = new Blockchain();
-blockchain.addBlock({data:"King"});
-blockchain.addBlock({data:"Kohli"});
+// blockchain.addBlock({data:"King"});
+// blockchain.addBlock({data:"Kohli"});
 // console.log(blockchain);
 
 // for(let i=0;i<1000;i++){
