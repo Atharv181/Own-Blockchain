@@ -19,6 +19,8 @@ class PubSub{
             this.handleMessage(channel,message);
         });
     }
+
+    
     handleMessage(channel,message){
         console.log(`Message recieved. Channel: ${channel} Message: ${message}`);
         const parseMessage = JSON.parse(message);
